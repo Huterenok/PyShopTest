@@ -30,12 +30,12 @@ mod tests {
         assert_eq!(res, expected);
     }
 
-		#[test]
+    #[test]
     fn take_last_score() {
         let game_stamps = generate_game();
         let stamp1 = game_stamps[1];
-				let stamp2 = game_stamps[2];
-				let offset = stamp2.offset - 1;
+        let stamp2 = game_stamps[2];
+        let offset = stamp2.offset - 1;
 
         let expected = stamp1.score.into();
 

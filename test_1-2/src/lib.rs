@@ -71,13 +71,9 @@ impl Into<(i32, i32)> for Score {
 }
 
 fn get_score(game_stamps: &[Stamp], offset: i32) -> (i32, i32) {
-		let search_result = game_stamps.binary_search_by_key(&offset, |stamp| stamp.offset);
+    let search_result = game_stamps.binary_search_by_key(&offset, |stamp| stamp.offset);
     match search_result {
-        Ok(index) => {
-					game_stamps[index].score.into()
-				},
-				Err(index_after_offset) => {
-					game_stamps[index_after_offset - 1].score.into()
-				}
+        Ok(index) => game_stamps[index].score.into(),
+        Err(index_after_offset) => game_stamps[index_after_offset - 1].score.into(),
     }
 }
